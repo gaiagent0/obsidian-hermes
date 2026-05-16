@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ChromaDB — ne kerüljön a repoba
+chromadb_data/
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+
+# Secrets
+.env
+*.env.local
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Hermes cache
+audio_cache/
+image_cache/
+sessions/
+logs/
