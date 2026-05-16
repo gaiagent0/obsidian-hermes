@@ -1,0 +1,83 @@
+{
+  "name": "obsidian-hermes",
+  "description": "Obsidian Vault + Hermes Agent RAG integráció — gaiagent projektportfólio",
+  "version": "2.0.0",
+  "created": "2026-05-14",
+  "updated": "2026-05-14T19:00:00+02:00",
+  "owner": "istva",
+  "environment": "Windows 10 (AMD64) — Hermes Agent @ C:\\Users\\istva\\AppData\\Local\\hermes",
+  "status": "active",
+  "vault": {
+    "path": "C:/Users/istva/Documents/gaiagent/gaiagent",
+    "obsidian_binary": "C:/Users/istva/AppData/Local/Obsidian/Obsidian.exe",
+    "total_files": 28,
+    "obsidian_version": "1.12.7",
+    "local_rest_api": {
+      "version": "3.6.2",
+      "port": 27124,
+      "protocol": "https",
+      "installed": true,
+      "enabled": true,
+      "working_endpoints": ["/", "/vault/", "/tags"],
+      "broken_endpoints": ["/vault/file/*", "/search", "/active-file", "/metadata", "/daily-notes"],
+      "note": "v3.6.2 NEM támogatja a fájlolvasást/keresést/írást. Csak vault lista + manifest + tags."
+    },
+    "projects_indexed": [
+      "fastmcp", "homelab-ai-stack", "homelab-backup-stack",
+      "homelab-core-services", "homelab-media-stack", "homelab-monitoring-stack",
+      "litellm-local-config", "proxmox-cluster-hardening",
+      "snapdragon-ai-stack", "windows-ai-autostart", "hu-ai-chat", "portfolio"
+    ],
+    "total_readmes": 12,
+    "total_chunks": 50,
+    "chunk_max_tokens": 500,
+    "embedding_model": "nomic-embed-text"
+  },
+  "chromadb": {
+    "type": "PersistentClient (file-based)",
+    "path": "C:/Users/istva/Documents/gaiagent/gaiagent/chromadb_data",
+    "collection": "gaiagent_readme_chunks",
+    "storage_bytes": 750000,
+    "chunk_count": 50,
+    "docker_rest_alternative": {
+      "available": false,
+      "note": "Docker ChromaDB NEM fut — PersistentClient elegendő"
+    }
+  },
+  "ollama": {
+    "binary": "C:/Users/istva/AppData/Local/Programs/Ollama/ollama.exe",
+    "running": true,
+    "port": 11434,
+    "host_env": "http://0.0.0.0:11434",
+    "models_installed": 17,
+    "embedding_model": "nomic-embed-text",
+    "inference_model_default": "qwen2.5:7b"
+  },
+  "hermes": {
+    "home": "C:/Users/istva/AppData/Local/hermes/hermes-agent",
+    "python": "C:/Users/istva/AppData/Local/hermes/hermes-agent/venv/Scripts/python.exe",
+    "config": "C:/Users/istva/AppData/Local/hermes/config.yaml",
+    "default_model": "inclusionai/ring-2.6-1t:free",
+    "provider": "openrouter",
+    "memory_enabled": true
+  },
+  "rag_skill": {
+    "name": "obsidian-vault",
+    "script": "C:/Users/istva/Documents/gaiagent/gaiagent/gaiagent_vault.py",
+    "tools": [
+      "gaiagent_vault_query",
+      "gaiagent_vault_context",
+      "gaiagent_vault_sources",
+      "gaiagent_vault_status",
+      "gaiagent_vault_reindex"
+    ],
+    "status": "installed_and_working"
+  },
+  "rest_api": {
+    "url": "https://127.0.0.1:27124",
+    "status": "partial",
+    "works": ["/", "/vault/", "/tags"],
+    "broken": ["/vault/file/*", "/search", "/active-file", "/metadata", "/daily-notes"],
+    "mcp_registered": false
+  }
+}
